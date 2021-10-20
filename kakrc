@@ -6,10 +6,19 @@ map global normal '#' ":comment-line<ret>"
 map global normal , "<space>"
 map global normal <space> ","
 
+map global insert <a-h> "<left>"
+map global insert <a-j> "<down>"
+map global insert <a-k> "<up>"
+map global insert <a-l> "<right>"
+
+map global normal <a-9> "<a-(>"
+map global normal <a-0> "<a-)>"
+
 map -docstring "paste the clipboard" global user p "<a-!>xsel<ret>"
 map -docstring "yank selection to clipboard" global user y "<a-|> xsel -i<ret>"
 map -docstring "repl" global user r ":repl<ret>"
 map -docstring "send text" global user s ":send-text<ret>"
+map -docstring "Wrap to 80 columns" global user f '|fmt -w80<ret>'
 
 # plugins
 enable-auto-pairs
