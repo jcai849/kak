@@ -24,3 +24,8 @@ map -docstring "select first child" global normal <ret> ":tree-select-first-chil
 map -docstring "select parent node" global normal <c-k> ":tree-select-parent-node<ret>"
 map -docstring "select next node" global normal <c-l> ":tree-select-next-node<ret>"
 # kak-lsp ...
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable
+lsp-diagnostic-lines-disable global
+map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
+map -docstring "lsp-jump" global lsp <ret> ":lsp-jump<ret>"
